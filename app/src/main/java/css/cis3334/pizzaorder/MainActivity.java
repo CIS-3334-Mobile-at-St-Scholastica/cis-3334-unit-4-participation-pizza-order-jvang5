@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +44,29 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     }
 
     public void onClickOrder(View view) {
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Large", false);
+        String size = "";
+        boolean xCheese = false;
+
+        if(rbSmall.isChecked())
+        {
+            size = "Small";
+        }
+        else if(rbMedium.isChecked())
+        {
+            size = "Medium";
+        }
+        else
+        {
+            size = "Large";
+        }
+
+        if(chkbxCheese.isChecked())
+        {
+            xCheese = true;
+        }
+
+        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni", size, xCheese);
+
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
