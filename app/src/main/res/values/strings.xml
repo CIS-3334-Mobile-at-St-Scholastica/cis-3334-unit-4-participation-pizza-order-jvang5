@@ -4,4 +4,13 @@
     <string name="large_pizza">Large Pizza</string>
     <string name="mediumpizza">MediumPizza</string>
     <string name="checkboxdelivery">CheckBoxDelivery</string>
+
+    <string-array name ="toppings">
+        <item>Pepperoni</item>
+        <item>Sausage</item>
+        <item>Mushroom</item>
+        <item>Bacon</item>
+        <item>Chicken</item>
+        <item>olives</item>
+    </string-array>
 </resources>

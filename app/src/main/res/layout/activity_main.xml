@@ -39,6 +39,12 @@
 
     </RadioGroup>
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerToppings"
+        android:entries="@array/toppings" />
+
     <CheckBox
         android:text="CheckBoxExtraCheese"
         android:layout_width="match_parent"
@@ -46,10 +52,11 @@
         android:id="@+id/checkBoxCheese"
         android:layout_marginTop="12dp" />
 
-    <Spinner
+    <CheckBox
+        android:text="@string/checkboxdelivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerToppings" />
+        android:id="@+id/checkBoxDeluvery" />
 
     <Button
         android:text="Order"
@@ -58,11 +65,11 @@
         android:id="@+id/buttonOrder"
         android:onClick="onClickOrder" />
 
-    <CheckBox
-        android:text="@string/checkboxdelivery"
+    <TextView
+        android:text="Delivery: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBoxDeluvery" />
+        android:id="@+id/textViewDelivery" />
 
     <TextView
         android:text="Total Due:"

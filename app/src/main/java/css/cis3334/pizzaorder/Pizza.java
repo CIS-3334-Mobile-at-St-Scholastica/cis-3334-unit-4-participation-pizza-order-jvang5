@@ -17,6 +17,7 @@ public class Pizza {
     private String description;
 
     public Pizza(String topping, pizzaSize size, boolean extraCheese) {
+        price = 0.00;
         this.topping = topping;
         this.size = size;
         this.extraCheese = extraCheese;

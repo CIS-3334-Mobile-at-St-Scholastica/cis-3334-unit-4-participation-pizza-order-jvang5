@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     CheckBox chkbxDelivery;
     TextView txtTotal;
     TextView txtStatus;
+    TextView txtDelivery;
     PizzaOrderInterface pizzaOrderSystem;
+    Spinner toppings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +37,28 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
 
         txtTotal = (TextView) findViewById(R.id.textViewTotal);
         txtStatus = (TextView) findViewById(R.id.textViewStatus);
+        txtDelivery = (TextView) findViewById(R.id.textViewDelivery);
 
+        toppings = (Spinner) findViewById(R.id.spinnerToppings);
         pizzaOrderSystem = new PizzaOrder(this);
     }
 
     @Override
     public void updateView(String orderStatus) {
-        txtStatus.setText("Order Status" + orderStatus);
+        txtStatus.setText("Order Status " + orderStatus);
     }
 
     public void onClickOrder(View view) {
+        if(chkbxDelivery.isChecked())
+        {
+            pizzaOrderSystem.setDelivery(chkbxDelivery.isChecked());
+            txtDelivery.setText("Delivery: YES");
+        }
+        else
+        {
+            txtDelivery.setText("Delivery: NO");
+        }
+
         String size = "";
         boolean xCheese = false;
 
@@ -65,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
             xCheese = true;
         }
 
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni", size, xCheese);
+        String orderDescription = pizzaOrderSystem.OrderPizza((String) toppings.getSelectedItem(), size, xCheese);
 
         //display a pop up message for a long period of time
         Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
