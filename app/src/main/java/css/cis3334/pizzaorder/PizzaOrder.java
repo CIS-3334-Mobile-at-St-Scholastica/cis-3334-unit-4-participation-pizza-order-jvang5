@@ -34,6 +34,7 @@ public class PizzaOrder implements PizzaOrderInterface {
         } else {
             size = Pizza.pizzaSize.LARGE;
         }
+
         Pizza newPizza = new Pizza(topping, size, extraCheese);
         pizzasInOrder.add(newPizza);
         view.updateView(newPizza.toString() + " added to order");
