@@ -46,7 +46,7 @@
         android:entries="@array/toppings" />
 
     <CheckBox
-        android:text="CheckBoxExtraCheese"
+        android:text="@string/checkboxextracheese"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkBoxCheese"
@@ -59,26 +59,26 @@
         android:id="@+id/checkBoxDeluvery" />
 
     <Button
-        android:text="Order"
+        android:text="@string/order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonOrder"
         android:onClick="onClickOrder" />
 
     <TextView
-        android:text="Delivery: "
+        android:text="@string/delivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewDelivery" />
 
     <TextView
-        android:text="Total Due:"
+        android:text="@string/total_due"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewTotal" />
 
     <TextView
-        android:text="Order Status: Nothing ordered yet"
+        android:text="@string/order_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewStatus" />

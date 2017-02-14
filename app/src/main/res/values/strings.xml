@@ -4,6 +4,11 @@
     <string name="large_pizza">Large Pizza</string>
     <string name="mediumpizza">MediumPizza</string>
     <string name="checkboxdelivery">CheckBoxDelivery</string>
+    <string name="delivery">Delivery:</string>
+    <string name="checkboxextracheese">CheckBoxExtraCheese</string>
+    <string name="order_status">Order Status: Nothing ordered yet</string>
+    <string name="order">Order</string>
+    <string name="total_due">Total Due:</string>
 
     <string-array name ="toppings">
         <item>Pepperoni</item>
